@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import sale from './sale.jpeg';
-import ootd from './ootd.jpg';
+import sale from './imgs/sale.jpeg';
+import ootd from './imgs/ootd.jpg';
+import avatar from './imgs/avatar.png';
+import heart from './imgs/heart.png';
+import bag from './imgs/shopping-bag.png';
 import './App.css';
 
 class App extends Component {
@@ -18,7 +21,11 @@ class App extends Component {
           <img src={ootd} alt="OOTD"/>
         </div>
         <div className="App-bottomNav">
-          <p>text</p>
+          <ul>
+            <li><img src={avatar} alt="Profile"/></li>
+            <li><img src={heart} alt="Favorites"/></li>
+            <li><img src={bag} alt="Cart"/></li>
+          </ul>
         </div>
       </div>
     );
