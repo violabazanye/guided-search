@@ -5,6 +5,7 @@ import avatar from './imgs/avatar.png';
 import heart from './imgs/heart.png';
 import bag from './imgs/shopping-bag.png';
 import './App.css';
+import Search from './search.js';
 
 class App extends Component {
   render() {
