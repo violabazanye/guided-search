@@ -1,0 +1,49 @@
+.App {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.App-header {
+  background-color: white;
+  margin: 0;
+  color: #000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-box-shadow: 0 1px 2px 1px #d3d3d3;
+     -moz-box-shadow: 0 1px 2px 1px #d3d3d3;
+          box-shadow: 0 1px 2px 1px #d3d3d3;
+}
+
+input[type=text]{
+  width: 90%;
+  box-sizing: border-box;
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 5px 15px;
+}
+
+.App-bottomNav{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #000;
+  color: white;
+}
+
+.main-container{
+  position: relative;
+  top: 120px;
+  margin-bottom: 60px;
+}
+
+.main-container img{
+  width: 320px;
+  height: 320px;
+}
+
+
+
