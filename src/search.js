@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-var products = [
+export var products = [
 	{name: 'Sweater', price: '30EUR'},
 	{name: 'Dress', price: '60EUR'},
 	{name: 'Shoes', price: '130EUR'}
@@ -15,6 +15,9 @@ export class Search extends Component{
 
 	handleClick(name){
 		this.props.onClick(name);
+		document.getElementById('search-div').classList.remove('show');
+		document.getElementById('results-div').style.display = "block";
+		document.getElementById('search-input').value = "name"; 
 	}
 
 	render(){

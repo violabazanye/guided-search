@@ -48,7 +48,7 @@ class App extends Component {
         <div className="App-header">
           <h3>APP NAME</h3>
           <div className="searchBar">
-            <input type="text" placeholder="Search" onChange={this.handleUserInput} value={this.state.userInput} />
+            <input id="search-input" type="text" placeholder="Search" onChange={this.handleUserInput} value={this.state.userInput} />
             <button id="cancel" onClick={this.handleClick}></button>
           </div>
         </div>
