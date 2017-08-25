@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 
 var products = [
-	{name: 'Sweater'},
-	{name: 'Dress'},
-	{name: 'Shoes'}
+	{name: 'Sweater', price: '30EUR'},
+	{name: 'Dress', price: '60EUR'},
+	{name: 'Shoes', price: '130EUR'}
 ];
 
 export class Search extends Component{
+	constructor(props){
+		super(props);
+
+		this.handleClick = this.handleClick.bind(this);
+	}
+
+	handleClick(name){
+		this.props.onClick(name);
+	}
 
 	render(){
 		var query = this.props.onUserInput;
@@ -19,7 +28,7 @@ export class Search extends Component{
 		});
 
 		let results = suggestions.map((suggestion, i) =>
-			<li key={i}>{suggestion}</li>
+			<li key={i} onClick={this.handleClick.bind(null, suggestion)}>{suggestion}</li>
 			);
 
 		return (

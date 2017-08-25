@@ -114,6 +114,15 @@ ul{
   float: left;
 }
 
+.selected-item{
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 4;
+  display: none;
+}
+
 
 
 

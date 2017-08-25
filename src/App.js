@@ -6,14 +6,16 @@ import heart from './imgs/heart.png';
 import bag from './imgs/shopping-bag.png';
 import './App.css';
 import { Search } from './Search.js';
+import { Results } from './Results.js';
 
 class App extends Component {
   constructor(props){
     super(props);
 
-    this.state = {userInput: ''};
+    this.state = {userInput: '', name: ''};
     this.handleUserInput = this.handleUserInput.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.showSelection = this.showSelection.bind(this);
   }
 
   handleUserInput(e){
@@ -34,6 +36,12 @@ class App extends Component {
     document.getElementById('cancel').style.display = "none"; 
   }
 
+  showSelection(givenName){
+    this.setState({
+      name: givenName
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -45,7 +53,8 @@ class App extends Component {
           </div>
         </div>
         <div className="main-container">
-        <Search onUserInput={this.state.userInput}/>
+        <Search onUserInput={this.state.userInput} onClick={this.showSelection} />
+        <Results name={this.state.name} />
           <img src={sale} alt="Sale"/>
           <p style={{fontSize: 12}}>FREE SHIPPING FOR ORDERS OVER 30EUR</p>
           <h4 style={{textAlign: 'left', marginLeft: 20}}>OUTFIT OF THE DAY</h4>
