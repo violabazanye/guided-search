@@ -13,12 +13,25 @@ class App extends Component {
 
     this.state = {userInput: ''};
     this.handleUserInput = this.handleUserInput.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleUserInput(e){
     this.setState({
       userInput: e.target.value
     });
+    if(this.state.userInput !== ''){
+      document.getElementById('search-div').className += " show";
+      document.getElementById('cancel').style.display = "block"; 
+    }
+  }
+
+  handleClick(){
+    this.setState({
+      userInput: ''
+    });
+    document.getElementById('search-div').classList.remove('show');
+    document.getElementById('cancel').style.display = "none"; 
   }
 
   render() {
@@ -26,10 +39,13 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <h3>APP NAME</h3>
-          <input type="text" placeholder="Search" onChange={this.handleUserInput} value={this.state.userInput} />
+          <div className="searchBar">
+            <input type="text" placeholder="Search" onChange={this.handleUserInput} value={this.state.userInput} />
+            <button id="cancel" onClick={this.handleClick}></button>
+          </div>
         </div>
         <div className="main-container">
-        <Search />
+        <Search onUserInput={this.state.userInput}/>
           <img src={sale} alt="Sale"/>
           <p style={{fontSize: 12}}>FREE SHIPPING FOR ORDERS OVER 30EUR</p>
           <h4 style={{textAlign: 'left', marginLeft: 20}}>OUTFIT OF THE DAY</h4>

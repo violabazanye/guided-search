@@ -11,10 +11,14 @@
   width: 100%;
   top: 0;
   overflow: hidden;
-  z-index: 1;
+  z-index: 5;
   -webkit-box-shadow: 0 1px 2px 1px #d3d3d3;
      -moz-box-shadow: 0 1px 2px 1px #d3d3d3;
           box-shadow: 0 1px 2px 1px #d3d3d3;
+}
+
+.searchBar{
+  position: relative;
 }
 
 input[type=text]{
@@ -23,7 +27,19 @@ input[type=text]{
   margin: 10px 0;
   border: 1px solid black;
   border-radius: 15px;
-  padding: 5px 15px;
+  padding: 8px 15px;
+}
+
+button{
+  background:url(./imgs/cancel.png) no-repeat;
+  cursor:pointer;
+  border:none;
+  width:16px;
+  height:16px;
+  position: absolute;
+  right: 10%;
+  top: 18px;
+  display: none;
 }
 
 .App-bottomNav{
@@ -64,8 +80,41 @@ input[type=text]{
 }
 
 .suggestions{
-  
+  background-color: white;
+  z-index: 4;
+  position: absolute;
+  opacity: 0.9;
+  height: 100%;
+  width: 100%;
 }
+
+.hide {
+  transform: translateY(-100%);
+  transition: .5s ease-in-out;
+  overflow: hidden;
+}
+.show {
+  transform: translateY(0);
+  transition: .5s ease-in;
+  overflow: hidden;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.search-results li{
+  background-color: #000;
+  color: white;
+  display: inline;
+  padding: 5px;
+  margin: 5px;
+  box-sizing: border-box; 
+  border-radius: 5px;
+  float: left;
+}
+
+
 
 
 
