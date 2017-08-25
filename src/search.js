@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import top from './imgs/top.jpeg';
+import skirt from './imgs/skirt.jpg';
+import shoes from './imgs/shoes.jpg';
 
 export var products = [
-	{name: 'Sweater', price: '30EUR'},
-	{name: 'Dress', price: '60EUR'},
-	{name: 'Shoes', price: '130EUR'}
+	{name: 'Top', price: '30EUR', img_url: top},
+	{name: 'Skirt', price: '60EUR', img_url: skirt},
+	{name: 'Shoes', price: '130EUR', img_url: shoes}
 ];
 
 export class Search extends Component{
@@ -15,9 +18,8 @@ export class Search extends Component{
 
 	handleClick(name){
 		this.props.onClick(name);
-		document.getElementById('search-div').classList.remove('show');
 		document.getElementById('results-div').style.display = "block";
-		document.getElementById('search-input').value = "name"; 
+		document.getElementById('search-div').style.opacity = 1;
 	}
 
 	render(){

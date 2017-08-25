@@ -30,10 +30,12 @@ class App extends Component {
 
   handleClick(){
     this.setState({
-      userInput: ''
+      userInput: '',
+      name: ''
     });
     document.getElementById('search-div').classList.remove('show');
     document.getElementById('cancel').style.display = "none"; 
+    document.getElementById('results-div').style.display = "none";
   }
 
   showSelection(givenName){
@@ -55,7 +57,7 @@ class App extends Component {
         <div className="main-container">
         <Search onUserInput={this.state.userInput} onClick={this.showSelection} />
         <Results name={this.state.name} />
-          <img src={sale} alt="Sale"/>
+          <img src={sale} style={{marginTop: 12}} alt="Sale"/>
           <p style={{fontSize: 12}}>FREE SHIPPING FOR ORDERS OVER 30EUR</p>
           <h4 style={{textAlign: 'left', marginLeft: 20}}>OUTFIT OF THE DAY</h4>
           <img src={ootd} alt="OOTD"/>
