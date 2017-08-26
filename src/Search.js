@@ -3,7 +3,7 @@ import top from './imgs/top.jpeg';
 import skirt from './imgs/skirt.jpg';
 import shoes from './imgs/shoes.jpg';
 
-export var products = [
+export const products = [
 	{name: 'Top', price: '30EUR', img_url: top},
 	{name: 'Skirt', price: '60EUR', img_url: skirt},
 	{name: 'Shoes', price: '130EUR', img_url: shoes}
@@ -24,11 +24,11 @@ export class Search extends Component{
 
 	render(){
 		var query = this.props.onUserInput;
-		var suggestions = [];
+		let suggestions = [];
 		let results;
 
 		products.forEach(function(item){
-			if (item.name.toLowerCase().indexOf(query) !== -1) {
+			if (item.name.toLowerCase().match(query.toLowerCase())) {
 				suggestions.push(item.name);
 			}
 		});
