@@ -36,10 +36,19 @@ export class Search extends Component{
 			<li key={i} onClick={this.handleClick.bind(null, suggestion)}>{suggestion}</li>
 			);
 
-		return (
-			<div id="search-div" className="suggestions hide"> 
-				<ul className="search-results">{results}</ul>
-			</div>
+		if (suggestions.length !== 0) {
+			return (
+				<div id="search-div" className="suggestions hide"> 
+					<ul id="list" className="search-results">{results}</ul>
+				</div>
 			);
+		}else{
+			return (
+				<div id="search-div" className="suggestions hide"> 
+					<p id="list">No results</p>
+				</div>
+			);
+		}
+		
 	}
 }

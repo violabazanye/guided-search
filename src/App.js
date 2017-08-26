@@ -4,6 +4,7 @@ import ootd from './imgs/ootd.jpg';
 import avatar from './imgs/avatar.png';
 import heart from './imgs/heart.png';
 import bag from './imgs/shopping-bag.png';
+import arrow from './imgs/left-arrow.png';
 import './App.css';
 import { Search } from './Search.js';
 import { Results } from './Results.js';
@@ -12,7 +13,11 @@ class App extends Component {
   constructor(props){
     super(props);
 
-    this.state = {userInput: '', name: ''};
+    this.state = {
+      userInput: '', 
+      name: ''
+    };
+
     this.handleUserInput = this.handleUserInput.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.showSelection = this.showSelection.bind(this);
@@ -24,7 +29,9 @@ class App extends Component {
     });
     if(this.state.userInput !== ''){
       document.getElementById('search-div').className += " show";
-      document.getElementById('cancel').style.display = "block"; 
+      document.getElementById('cancel').style.display = "block";
+      document.getElementById('backBtn').style.display = "block"; 
+      document.getElementById('list').style.display = "block";
     }
   }
 
@@ -36,6 +43,8 @@ class App extends Component {
     document.getElementById('search-div').classList.remove('show');
     document.getElementById('cancel').style.display = "none"; 
     document.getElementById('results-div').style.display = "none";
+    document.getElementById('backBtn').style.display = "none";
+    document.getElementById('list').style.display = "none";
   }
 
   showSelection(givenName){
@@ -49,6 +58,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <h3>APP NAME</h3>
+          <img id="backBtn" src={arrow} alt="back" onClick={this.handleClick} />
           <div className="searchBar">
             <input id="search-input" type="text" placeholder="Search" onChange={this.handleUserInput} value={this.state.userInput} />
             <button id="cancel" onClick={this.handleClick}></button>

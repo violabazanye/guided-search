@@ -15,7 +15,7 @@ export class Results extends Component{
 		}
 
 		return (
-			<div id="results-div" className="selected-item">
+			<div id="results-div" className="selected-item fadeIn">
 				<img src={url} alt="Item" />
 				<p>{item}</p>
 				<p>{price}</p>
