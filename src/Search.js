@@ -25,6 +25,7 @@ export class Search extends Component{
 	render(){
 		var query = this.props.onUserInput;
 		var suggestions = [];
+		let results;
 
 		products.forEach(function(item){
 			if (item.name.toLowerCase().indexOf(query) !== -1) {
@@ -32,23 +33,19 @@ export class Search extends Component{
 			}
 		});
 
-		let results = suggestions.map((suggestion, i) =>
-			<li key={i} onClick={this.handleClick.bind(null, suggestion)}>{suggestion}</li>
-			);
-
 		if (suggestions.length !== 0) {
-			return (
-				<div id="search-div" className="suggestions hide"> 
-					<ul id="list" className="search-results">{results}</ul>
-				</div>
-			);
+			results = suggestions.map((suggestion, i) =>
+				<li key={i} onClick={this.handleClick.bind(null, suggestion)}>{suggestion}</li>
+				);
 		}else{
-			return (
-				<div id="search-div" className="suggestions hide"> 
-					<p id="list">No results</p>
-				</div>
-			);
-		}
+			results = "No results"
+		};
+
+		return (
+			<div id="search-div" className="suggestions hide"> 
+				<ul id="list" className="search-results">{results}</ul>
+			</div>
+		);
 		
 	}
 }
