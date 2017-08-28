@@ -102,7 +102,7 @@ button{
 }
 .show {
   transform: translateY(0);
-  transition: .25s ease-in;
+  transition: .35s ease-in;
   overflow: hidden;
 }
 
