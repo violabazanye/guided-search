@@ -97,12 +97,12 @@ button{
 
 .hide {
   transform: translateY(-100%);
-  transition: .5s ease-in-out;
+  transition: .25s ease-in-out;
   overflow: hidden;
 }
 .show {
   transform: translateY(0);
-  transition: .5s ease-in;
+  transition: .25s ease-in;
   overflow: hidden;
 }
 
