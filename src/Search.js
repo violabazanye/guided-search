@@ -35,7 +35,7 @@ export class Search extends Component{
 
 		if (suggestions.length !== 0) {
 			results = suggestions.map((suggestion, i) =>
-				<li key={i} onClick={this.handleClick.bind(null, suggestion)}>{suggestion}</li>
+				<li className="fadeIn" key={i} onClick={this.handleClick.bind(null, suggestion)}>{suggestion}</li>
 				);
 		}else{
 			results = "No results"
