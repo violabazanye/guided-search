@@ -139,10 +139,12 @@ ul{
 
 .fadeIn {
   animation-name: fadeIn;
+  animation-duration: .5s;
 }
 
 .fadeOut {
   animation-name: fadeOut;
+  animation-duration: .5s;
 }
 
 @keyframes fadeIn {
